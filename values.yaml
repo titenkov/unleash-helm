@@ -1,0 +1,19 @@
+# Default values for nginx.
+# This is a YAML-formatted file.
+# Declare name/value pairs to be passed into your templates.
+
+replicaCount: 1
+restartPolicy: Never
+
+image:
+  repository: unleashorg/unleash-server
+  tag: 3.2
+  pullPolicy: IfNotPresent
+
+# values for postgresql chart.
+postgresql:
+  postgresqlUsername: postgres
+  postgresqlPassword: unleash
+  postgresqlDatabase: unleash
+  service:
+    clusterIP: 10.96.0.13
